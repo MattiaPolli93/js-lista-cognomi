@@ -1,6 +1,6 @@
 // Ask the user their surname, then place it in an array with other surnames; print the list alphabetically and state its place in the list.
 // Array and Variables
-var surnames = ["Bianchi", "Rossi", "Duzioni", "Balsano", "Verdi"];
+var surnames = ["Bianchi", "Rossi", "Duzioni", "Franchi", "Martini", "Balsano", "Verdi"];
 var userSurname = prompt("Hello! Please insert your surname");
 
 // Adding user's inserted surname inside the array
@@ -8,12 +8,18 @@ surnames.push(userSurname);
 
 // Sorting it alphabetically
 surnames.sort();
-var newUsername;
+var newSurname;
 
 // Calculating and displaying
 for (var i = 0; i < surnames.length; i++) {
     newSurname = document.getElementById("surname-list").innerHTML;
+    // Displaying in the HTML file
     document.getElementById("surname-list").innerHTML = newSurname + "<li>" + surnames[i] + "</li>";
 }
 
-// console.log(surnames);
+// Position inside the list
+var alphabeticalOrder = surnames.indexOf(userSurname);
+var position = alphabeticalOrder + 1;
+
+// Displaying in the HTML file
+document.getElementById("position").innerHTML = position;
